@@ -1,0 +1,34 @@
+.mainblue{
+    background-color: #3B54EC;
+    padding: 50px 10px;
+    padding-bottom: 0px;
+}
+
+.mainBody{
+    background-color:#fafafc;
+    padding: 10px;
+    color: #000;
+}
+
+.innerContent{
+    width: 80%;
+    margin-left: 10%;
+    background-color: #fff;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    margin-top: -10px;
+    z-index: 1000;
+    padding: 10px;
+    min-height: 300px;
+    border: thin solid #ededed;
+}
+
+.orderContent{
+    margin-top: 10px;
+    padding:10px;
+    border-radius: 15%;
+}
+
+.grayHeader{
+    color:#C4CAD0;
+}

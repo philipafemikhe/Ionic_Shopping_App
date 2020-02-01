@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width:100%; padding:0px">
+    <div class="mainblue">
+      <h1 style="color: #C4CAD0;">Good Morning,</h1>
+      <h1 style="color: #fff;">Marvelous Stores (Kiosk)</h1>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="8">
+            <input type="text" placeholder="What are you looking for today?"/>
+          </ion-col>
+          <ion-col size="4">
+            xxx
+          </ion-col>
+        </ion-row>
+      </ion-grid>  
+      <div style="padding: 10px; margin-top:100px;width: 80%;margin-left:10%; border-top-left-radius: 15px; border-top-right-radius: 15px;min-height: 50px;background-color: #fff;">
+        <h1>Billing Info</h1>
+      </div>
+    </div>
+
+    <div class="mainBody">
+      <div class="innerContent">
+        <img src="assets/img/person.jfif" width="75" height="75" style="border-radius: 50%;">
+        <div class="headerText">Person </div>
+        <div class="bodyText">
+          {{customername}}
+          <br>{{phonenumber}}
+        </div> 
+
+        <div class="headerText">Store </div>
+        <div class="bodyText">
+          {{store}}
+        </div> 
+        <div class="headerText">Billing Address </div>
+        <div class="bodyText">
+          {{billingaddress}}
+        </div> 
+      </div>
+
+      <div class="orderContent">
+          <img src="assets/img/person.jfif" width="75" height="75" style="border-radius: 50%;">
+          <div class="headerText">Buyer Orders </div>
+          <ion-grid>
+            <ion-row>
+              <ion-col style="font-size: medium;">
+                  Orders <div style="width:2em; background-color: red; border-radius: 10px">2</div>
+              </ion-col>
+              <ion-col style="font-size: medium;">
+                  Weekly Order <div style="width:2em; background-color: red; border-radius: 10px">4</div>
+              </ion-col>
+              <ion-col style="font-size: medium;">
+                 In Cart <div style="width:2em; background-color: red; border-radius: 10px">3</div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+  
+          <div class="headerText">Store </div>
+          <div class="bodyText">
+            <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <button ion-button>Filter</button>
+                </ion-col>
+                <ion-col size="8">
+                    <input type="text" name="searchOrders">
+                </ion-col>
+              </ion-row>
+              <ion-row *ngFor="let order of orderDetails">
+                <ion-col size="6">
+                  {{order.status}} <br>
+                  Order {{orderNumber}}
+                  {{orderDetails.size()}} items. {{order.orderdate}}
+                </ion-col>
+                <ion-col size="6" right>
+                  {{order.unitprice}} * {{order.quantity}}
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+            <h1 class="grayHeader">Distributors</h1>
+            <h2>Suppliers</h2>
+            <ion-grid>
+              <ion-row *ngFor="let supplier of suppliers">
+                <ion-col size="4">
+                    <img src="{{supplier.photo}}" width="75" height="75" style="border-radius: 50%;">
+                </ion-col>
+                <ion-col size="8">
+                  {{supplier.product}}
+                  <p style="font-weight: bold;">N{{supplier.amount| number:'4.1-2'}} <span style="float:right">{{supplier.qty}} units</span></p>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col size="12">
+                  <b>Total <span style="float:right; font-weight: bold;">N{{totalAmountSupplied| number:'4.1-2'}}</span></b>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            
+          </div> 
+         
+        </div>
+
+    </div>
+    
+  </div>
+</ion-content>
